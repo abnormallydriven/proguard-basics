@@ -5,6 +5,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('release-keystore.jks')
+            storePassword 'release'
+            keyAlias = 'release-key'
+            keyPassword 'release'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.abnormallydriven.proguardbasics"
@@ -13,10 +21,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
