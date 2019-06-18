@@ -3,6 +3,7 @@ package com.abnormallydriven.proguardbasics
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.abnormallydriven.proguardbasics.messaging.Message
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val clazz = Class.forName("com.abnormallydriven.proguardbasics.Message")
+        val clazz = Class.forName("com.abnormallydriven.proguardbasics.messaging.Message")
         val constructor = clazz.getConstructor(String::class.java)
 
         val myReflectedMessage = constructor.newInstance("My Message String")
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun usePartOfMessageSender() {
-        val clazz = Class.forName("com.abnormallydriven.proguardbasics.MessageSender")
+        val clazz = Class.forName("com.abnormallydriven.proguardbasics.messaging.MessageSender")
         val constructor = clazz.getConstructor()
         val message = Message("Super Important Message")
 

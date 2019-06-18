@@ -21,8 +21,8 @@
 #-renamesourcefileattribute SourceFile
 
 
-#-keep class com.abnormallydriven.proguardbasics.Message { *; }
+#-keep class com.abnormallydriven.proguardbasics.messaging.Message { *; }
 
--keep class com.abnormallydriven.proguardbasics.MessageSender {
-    void sendMessage(com.abnormallydriven.proguardbasics.Message);
+-keep class com.abnormallydriven.proguardbasics.messaging.MessageSender {
+    void sendMessage(com.abnormallydriven.proguardbasics.messaging.Message);
 }

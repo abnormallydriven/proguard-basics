@@ -1,4 +1,4 @@
-package com.abnormallydriven.proguardbasics
+package com.abnormallydriven.proguardbasics.messaging
 
 import android.util.Log
 
