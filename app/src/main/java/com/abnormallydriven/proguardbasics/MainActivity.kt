@@ -16,5 +16,17 @@ class MainActivity : AppCompatActivity() {
         val myReflectedMessage = constructor.newInstance("My Message String")
         Log.d("ProguardBasics", myReflectedMessage.toString())
 
+        usePartOfMessageSender()
+    }
+
+    private fun usePartOfMessageSender() {
+        val clazz = Class.forName("com.abnormallydriven.proguardbasics.MessageSender")
+        val constructor = clazz.getConstructor()
+        val message = Message("Super Important Message")
+
+        val myReflectedSender = constructor.newInstance()
+
+        val sendMessageMethod = clazz.getDeclaredMethod("sendMessage", Message::class.java)
+        sendMessageMethod.invoke(myReflectedSender, message)
     }
 }

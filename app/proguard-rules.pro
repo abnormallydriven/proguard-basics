@@ -22,3 +22,7 @@
 
 
 #-keep class com.abnormallydriven.proguardbasics.Message { *; }
+
+-keep class com.abnormallydriven.proguardbasics.MessageSender {
+    void sendMessage(com.abnormallydriven.proguardbasics.Message);
+}
