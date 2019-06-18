@@ -21,4 +21,4 @@
 #-renamesourcefileattribute SourceFile
 
 
--keep class com.abnormallydriven.proguardbasics.Message { *; }
+#-keep class com.abnormallydriven.proguardbasics.Message { *; }
